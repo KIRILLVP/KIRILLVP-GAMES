@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KIRILLVP GAMES</title>
     <style>
-        /* Устанавливаем чёрный фон для всей страницы */
+        /* Г“Г±ГІГ Г­Г ГўГ«ГЁГўГ ГҐГ¬ Г·ВёГ°Г­Г»Г© ГґГ®Г­ Г¤Г«Гї ГўГ±ГҐГ© Г±ГІГ°Г Г­ГЁГ¶Г» */
         body {
             background-color: black;
             color: white;
@@ -20,49 +20,49 @@
             text-align: center;
         }
 
-        /* Контейнер для картинок и iframe */
+        /* ГЉГ®Г­ГІГҐГ©Г­ГҐГ° Г¤Г«Гї ГЄГ Г°ГІГЁГ­Г®ГЄ ГЁ iframe */
         .content {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             margin-top: 20px;
-            gap: 20px; /* Добавляем отступы между элементами */
+            gap: 20px; /* Г„Г®ГЎГ ГўГ«ГїГҐГ¬ Г®ГІГ±ГІГіГЇГ» Г¬ГҐГ¦Г¤Гі ГЅГ«ГҐГ¬ГҐГ­ГІГ Г¬ГЁ */
             padding: 0 20px;
         }
 
-        /* Стиль для заголовка с картинкой сверху */
+        /* Г‘ГІГЁГ«Гј Г¤Г«Гї Г§Г ГЈГ®Г«Г®ГўГЄГ  Г± ГЄГ Г°ГІГЁГ­ГЄГ®Г© Г±ГўГҐГ°ГµГі */
         .header-image {
             width: 100%;
-            max-width: 1000px; /* Увеличиваем картинку */
+            max-width: 1000px; /* Г“ГўГҐГ«ГЁГ·ГЁГўГ ГҐГ¬ ГЄГ Г°ГІГЁГ­ГЄГі */
             height: auto;
-            margin-bottom: 40px; /* Добавляем отступ снизу */
+            margin-bottom: 40px; /* Г„Г®ГЎГ ГўГ«ГїГҐГ¬ Г®ГІГ±ГІГіГЇ Г±Г­ГЁГ§Гі */
         }
 
-        /* Стиль для текста под картинкой */
+        /* Г‘ГІГЁГ«Гј Г¤Г«Гї ГІГҐГЄГ±ГІГ  ГЇГ®Г¤ ГЄГ Г°ГІГЁГ­ГЄГ®Г© */
         .welcome-text {
             color: white;
             font-size: 24px;
-            text-align: left; /* Выравниваем текст по левому краю */
-            margin-left: 20px; /* Добавляем отступ слева */
-            margin-bottom: 20px; /* Отступ снизу */
-            max-width: 1000px; /* Ограничиваем ширину текста */
+            text-align: left; /* Г‚Г»Г°Г ГўГ­ГЁГўГ ГҐГ¬ ГІГҐГЄГ±ГІ ГЇГ® Г«ГҐГўГ®Г¬Гі ГЄГ°Г Гѕ */
+            margin-left: 20px; /* Г„Г®ГЎГ ГўГ«ГїГҐГ¬ Г®ГІГ±ГІГіГЇ Г±Г«ГҐГўГ  */
+            margin-bottom: 20px; /* ГЋГІГ±ГІГіГЇ Г±Г­ГЁГ§Гі */
+            max-width: 1000px; /* ГЋГЈГ°Г Г­ГЁГ·ГЁГўГ ГҐГ¬ ГёГЁГ°ГЁГ­Гі ГІГҐГЄГ±ГІГ  */
         }
 
-        /* Стиль для каждого iframe */
+        /* Г‘ГІГЁГ«Гј Г¤Г«Гї ГЄГ Г¦Г¤Г®ГЈГ® iframe */
         iframe {
             width: 552px;
             height: 167px;
             border: none;
         }
 
-        /* Для мобильных устройств: выравнивание iframe по два на строке */
+        /* Г„Г«Гї Г¬Г®ГЎГЁГ«ГјГ­Г»Гµ ГіГ±ГІГ°Г®Г©Г±ГІГў: ГўГ»Г°Г ГўГ­ГЁГўГ Г­ГЁГҐ iframe ГЇГ® Г¤ГўГ  Г­Г  Г±ГІГ°Г®ГЄГҐ */
         @media (max-width: 1200px) {
             iframe {
-                width: 48%; /* Делаем ширину iframe около половины экрана */
+                width: 48%; /* Г„ГҐГ«Г ГҐГ¬ ГёГЁГ°ГЁГ­Гі iframe Г®ГЄГ®Г«Г® ГЇГ®Г«Г®ГўГЁГ­Г» ГЅГЄГ°Г Г­Г  */
             }
         }
 
-        /* Для очень маленьких экранов (например, мобильные устройства) iframe будет занимать всю ширину */
+        /* Г„Г«Гї Г®Г·ГҐГ­Гј Г¬Г Г«ГҐГ­ГјГЄГЁГµ ГЅГЄГ°Г Г­Г®Гў (Г­Г ГЇГ°ГЁГ¬ГҐГ°, Г¬Г®ГЎГЁГ«ГјГ­Г»ГҐ ГіГ±ГІГ°Г®Г©Г±ГІГўГ ) iframe ГЎГіГ¤ГҐГІ Г§Г Г­ГЁГ¬Г ГІГј ГўГ±Гѕ ГёГЁГ°ГЁГ­Гі */
         @media (max-width: 600px) {
             iframe {
                 width: 100%;
@@ -75,15 +75,15 @@
 <body>
 
 
-    <!-- Картинка сверху страницы -->
+    <!-- ГЉГ Г°ГІГЁГ­ГЄГ  Г±ГўГҐГ°ГµГі Г±ГІГ°Г Г­ГЁГ¶Г» -->
     <img src="img/BANNER.jpg" alt="Header Image" class="header-image">
 
-    <!-- Надпись под картинкой -->
+    <!-- ГЌГ Г¤ГЇГЁГ±Гј ГЇГ®Г¤ ГЄГ Г°ГІГЁГ­ГЄГ®Г© -->
     <div class="welcome-text">
         Hello! Here you can download all games of the indie team KIRILLVP GAMES. Our page on <a href="https://kirillvp-games.itch.io/" target="_blank" style="color: #00bfae; text-decoration: none;">itch.io</a>.
     </div>
 
-    <!-- Контейнер для iframe -->
+    <!-- ГЉГ®Г­ГІГҐГ©Г­ГҐГ° Г¤Г«Гї iframe -->
     <div class="content">
 
         <iframe frameborder="0" src="https://itch.io/embed/3205528?dark=true" width="552" height="167"><a href="https://kirillvp-games.itch.io/bloody-bells">Bloody Bells by KIRILLVP GAMES</a></iframe>
@@ -190,6 +190,10 @@
 
         <iframe src="https://itch.io/embed/1249938?dark=true" frameborder="0">
             <a href="https://kirillvp-games.itch.io/cubic-adventure-platformer" target="_blank">Cubic Adventure: Platformer by KIRILLVP GAMES</a>
+        </iframe>
+
+        <iframe src="https://itch.io/embed/3483558?dark=true" frameborder="0">
+            <a href="https://kirillvp-games.itch.io/untitled-circle-game" target="_blank">Untitled Circle Game by KIRILLVP GAMES</a>
         </iframe>
 
     </div>
