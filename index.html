@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KIRILLVP GAMES</title>
     <style>
-        /* Óñòàíàâëèâàåì ÷¸ðíûé ôîí äëÿ âñåé ñòðàíèöû */
         body {
             background-color: black;
             color: white;
@@ -20,49 +19,43 @@
             text-align: center;
         }
 
-        /* Êîíòåéíåð äëÿ êàðòèíîê è iframe */
         .content {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             margin-top: 20px;
-            gap: 20px; /* Äîáàâëÿåì îòñòóïû ìåæäó ýëåìåíòàìè */
+            gap: 20px;
             padding: 0 20px;
         }
 
-        /* Ñòèëü äëÿ çàãîëîâêà ñ êàðòèíêîé ñâåðõó */
         .header-image {
             width: 100%;
-            max-width: 1000px; /* Óâåëè÷èâàåì êàðòèíêó */
+            max-width: 1000px;
             height: auto;
-            margin-bottom: 40px; /* Äîáàâëÿåì îòñòóï ñíèçó */
+            margin-bottom: 40px;
         }
 
-        /* Ñòèëü äëÿ òåêñòà ïîä êàðòèíêîé */
         .welcome-text {
             color: white;
             font-size: 24px;
-            text-align: left; /* Âûðàâíèâàåì òåêñò ïî ëåâîìó êðàþ */
-            margin-left: 20px; /* Äîáàâëÿåì îòñòóï ñëåâà */
-            margin-bottom: 20px; /* Îòñòóï ñíèçó */
-            max-width: 1000px; /* Îãðàíè÷èâàåì øèðèíó òåêñòà */
+            text-align: left;
+            margin-left: 20px;
+            margin-bottom: 20px;
+            max-width: 1000px;
         }
 
-        /* Ñòèëü äëÿ êàæäîãî iframe */
         iframe {
             width: 552px;
             height: 167px;
             border: none;
         }
 
-        /* Äëÿ ìîáèëüíûõ óñòðîéñòâ: âûðàâíèâàíèå iframe ïî äâà íà ñòðîêå */
         @media (max-width: 1200px) {
             iframe {
-                width: 48%; /* Äåëàåì øèðèíó iframe îêîëî ïîëîâèíû ýêðàíà */
+                width: 48%;
             }
         }
 
-        /* Äëÿ î÷åíü ìàëåíüêèõ ýêðàíîâ (íàïðèìåð, ìîáèëüíûå óñòðîéñòâà) iframe áóäåò çàíèìàòü âñþ øèðèíó */
         @media (max-width: 600px) {
             iframe {
                 width: 100%;
@@ -74,28 +67,26 @@
 <link rel="icon" href="img/logo.jpg" type="image/x-icon">
 <body>
 
-
-    <!-- Êàðòèíêà ñâåðõó ñòðàíèöû -->
     <img src="img/BANNER.jpg" alt="Header Image" class="header-image">
 
-    <!-- Íàäïèñü ïîä êàðòèíêîé -->
     <div class="welcome-text">
-        Hello! Here you can download all games of the indie team KIRILLVP GAMES. Our page on <a href="https://kirillvp-games.itch.io/" target="_blank" style="color: #00bfae; text-decoration: none;">itch.io</a>.
+        Hello! Here you can download all games of the indie team KIRILLVP GAMES. Our page on 
+        <a href="https://kirillvp-games.itch.io/" target="_blank" style="color: #00bfae; text-decoration: none;">itch.io</a>.
     </div>
 
-    <!-- Êîíòåéíåð äëÿ iframe -->
     <div class="content">
 
         <iframe frameborder="0" src="https://itch.io/embed/3205528?dark=true" width="552" height="167"><a href="https://kirillvp-games.itch.io/bloody-bells">Bloody Bells by KIRILLVP GAMES</a></iframe>
-<iframe src="https://itch.io/embed/3539491?dark=true" frameborder="0">
+
+        <iframe src="https://itch.io/embed/3539491?dark=true" frameborder="0">
             <a href="https://kirillvp-games.itch.io/drone-attack" target="_blank">Drone Attack by KIRILLVP GAMES</a>
         </iframe>
         
-<iframe src="https://itch.io/embed/3483558?dark=true" frameborder="0">
+        <iframe src="https://itch.io/embed/3483558?dark=true" frameborder="0">
             <a href="https://kirillvp-games.itch.io/untitled-circle-game" target="_blank">Untitled Circle Game by KIRILLVP GAMES</a>
         </iframe>
         
-<iframe src="https://itch.io/embed/3386318?dark=true" frameborder="0">
+        <iframe src="https://itch.io/embed/3386318?dark=true" frameborder="0">
             <a href="https://kirillvp-games.itch.io/a-set-of-different-music-free" target="_blank">A set of different music (FREE!) by KIRILLVP GAMES</a>
         </iframe>
         
@@ -203,7 +194,16 @@
             <a href="https://kirillvp-games.itch.io/cubic-adventure-platformer" target="_blank">Cubic Adventure: Platformer by KIRILLVP GAMES</a>
         </iframe>
 
+        <!-- ❗ Новая игра добавлена сюда -->
+        <iframe frameborder="0" src="https://itch.io/embed/4056974?dark=true" width="552" height="167">
+            <a href="https://kirillvp-games.itch.io/run-and-shoot-ultra-hardcore" target="_blank">
+                Run and Shoot (Ultra Hardcore) by KIRILLVP GAMES
+            </a>
+        </iframe>
+
     </div>
 
 </body>
 </html>
+
+
