@@ -8,11 +8,11 @@
     <link rel="icon" href="img/logo.jpg" type="image/x-icon">
     <style>
         :root {
-            --background-color: #111111; /* Глубокий черный фон */
+            --background-color: #111111; /* Deep black background */
             --text-color: #f0f0f0;
-            --accent-color: #ff0000; /* Ярко-красный акцент */
-            --card-background: #1e1e1e; /* Темно-серый для карточек */
-            --card-shadow: 0 4px 15px rgba(255, 0, 0, 0.2); /* Красная тень для стиля */
+            --accent-color: #ff0000; /* Bright red accent */
+            --card-background: #1e1e1e; /* Dark gray for cards */
+            --card-shadow: 0 4px 15px rgba(255, 0, 0, 0.2); /* Red shadow for style */
             --border-radius: 8px;
         }
 
@@ -41,11 +41,11 @@
             width: 100%;
             max-width: 1200px;
             height: auto;
-            /* Улучшение адаптивности баннера */
+            /* Ensures guaranteed visibility and proper scaling */
             display: block;
             object-fit: cover; 
             border-radius: var(--border-radius);
-            box-shadow: 0 0 20px rgba(255, 0, 0, 0.5); /* Более заметная красная тень */
+            box-shadow: 0 0 20px rgba(255, 0, 0, 0.5); 
         }
 
         .welcome-text {
@@ -55,7 +55,7 @@
             text-align: left;
             font-size: 1.2em;
             background-color: var(--card-background);
-            border-left: 5px solid var(--accent-color); /* Красная полоса для акцента */
+            border-left: 5px solid var(--accent-color); /* Red accent bar */
             border-radius: var(--border-radius);
             margin: 20px 0;
             box-shadow: var(--card-shadow);
@@ -79,22 +79,18 @@
         .content {
             display: flex;
             flex-wrap: wrap;
-            justify-content: flex-start; /* ВАЖНО: Выравнивание по левому краю */
+            justify-content: flex-start; /* IMPORTANT: Aligning cards to the left */
             gap: 30px; 
             padding: 20px;
             max-width: 1200px;
             width: 100%;
         }
 
-        /* * ВАЖНЫЙ ФИКС ВЫРАВНИВАНИЯ:
-         * Используем невидимый элемент-заполнитель, 
-         * чтобы последняя карточка оставалась слева, 
-         * а не центрировалась. 
-         */
+        /* FIX: Placeholder element to push the last single item to the left */
         .content::after {
             content: "";
-            flex-grow: 1; /* Позволяет заполнителю занять оставшееся место */
-            max-width: 552px; /* Ширина одного iframe */
+            flex-grow: 1; 
+            max-width: 552px; 
             min-width: 0; 
         }
 
@@ -104,9 +100,8 @@
             box-shadow: var(--card-shadow);
             transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
             overflow: hidden;
-            /* Обеспечиваем, что карточка занимает нужную ширину */
             width: 552px; 
-            flex-shrink: 0; /* Не сжимать */
+            flex-shrink: 0; 
         }
 
         .game-card:hover {
@@ -131,7 +126,7 @@
             border-top: 1px solid #333;
         }
 
-        /* Адаптивность */
+        /* Responsiveness */
         @media (max-width: 1200px) {
             .content {
                 gap: 20px;
@@ -139,9 +134,9 @@
         }
         
         @media (max-width: 1150px) {
-            /* Переход на две колонки поменьше */
+            /* Switch to two smaller columns */
             .game-card {
-                 width: calc(50% - 10px); /* Два элемента в ряд с учетом gap 20px */
+                 width: calc(50% - 10px); 
             }
              .content::after {
                 max-width: calc(50% - 10px);
@@ -153,10 +148,10 @@
         }
 
         @media (max-width: 768px) {
-            /* На мобильных устройствах — одна колонка */
+            /* Single column on mobile */
             .game-card {
                 width: 100%;
-                max-width: 400px; /* Ограничиваем максимальную ширину */
+                max-width: 400px; 
             }
 
             iframe {
@@ -164,11 +159,11 @@
             }
 
             .content {
-                justify-content: center; /* Центрируем, когда одна колонка */
+                justify-content: center; /* Center items when single column */
             }
 
             .content::after {
-                display: none; /* Заполнитель не нужен, когда все по центру */
+                display: none; /* Placeholder not needed in single column */
             }
 
             .welcome-text {
@@ -204,17 +199,11 @@
             </div>
 
             <div class="game-card">
-                <iframe frameborder="0" src="https://itch.io/embed/3205528?dark=true" width="552" height="167">
-                    <a href="https://kirillvp-games.itch.io/bloody-bells">Bloody Bells by KIRILLVP GAMES</a>
-                </iframe>
-            </div>
-
-            <div class="game-card">
                 <iframe src="https://itch.io/embed/3539491?dark=true" frameborder="0">
                     <a href="https://kirillvp-games.itch.io/drone-attack" target="_blank">Drone Attack by KIRILLVP GAMES</a>
                 </iframe>
             </div>
-            
+
             <div class="game-card">
                 <iframe src="https://itch.io/embed/3483558?dark=true" frameborder="0">
                     <a href="https://kirillvp-games.itch.io/untitled-circle-game" target="_blank">Untitled Circle Game by KIRILLVP GAMES</a>
@@ -227,6 +216,12 @@
                 </iframe>
             </div>
             
+            <div class="game-card">
+                <iframe frameborder="0" src="https://itch.io/embed/3205528?dark=true" width="552" height="167">
+                    <a href="https://kirillvp-games.itch.io/bloody-bells">Bloody Bells by KIRILLVP GAMES</a>
+                </iframe>
+            </div>
+
             <div class="game-card">
                 <iframe src="https://itch.io/embed/3065855?dark=true" frameborder="0">
                     <a href="https://kirillvp-games.itch.io/demonic-soul" target="_blank">Demonic Soul by KIRILLVP GAMES</a>
@@ -391,4 +386,3 @@
 
 </body>
 </html>
-
