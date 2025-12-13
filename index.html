@@ -1,18 +1,18 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KIRILLVP GAMES | Главная</title>
+    <title>KIRILLVP GAMES | Home</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="icon" href="img/logo.jpg" type="image/x-icon">
     <style>
         :root {
-            --background-color: #1a1a1a;
+            --background-color: #111111; /* Глубокий черный фон */
             --text-color: #f0f0f0;
-            --accent-color: #00bfae;
-            --card-background: #282828;
-            --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+            --accent-color: #ff0000; /* Ярко-красный акцент */
+            --card-background: #1e1e1e; /* Темно-серый для карточек */
+            --card-shadow: 0 4px 15px rgba(255, 0, 0, 0.2); /* Красная тень для стиля */
             --border-radius: 8px;
         }
 
@@ -25,7 +25,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            min-height: 100vh; /* Минимальная высота, чтобы футер был внизу */
+            min-height: 100vh; 
             text-align: center;
         }
 
@@ -41,9 +41,11 @@
             width: 100%;
             max-width: 1200px;
             height: auto;
+            /* Улучшение адаптивности баннера */
+            display: block;
+            object-fit: cover; 
             border-radius: var(--border-radius);
-            box-shadow: var(--card-shadow);
-            object-fit: cover; /* Для лучшего отображения */
+            box-shadow: 0 0 20px rgba(255, 0, 0, 0.5); /* Более заметная красная тень */
         }
 
         .welcome-text {
@@ -53,9 +55,14 @@
             text-align: left;
             font-size: 1.2em;
             background-color: var(--card-background);
+            border-left: 5px solid var(--accent-color); /* Красная полоса для акцента */
             border-radius: var(--border-radius);
             margin: 20px 0;
             box-shadow: var(--card-shadow);
+        }
+
+        .welcome-text strong {
+            color: var(--accent-color);
         }
 
         .welcome-text a {
@@ -66,17 +73,29 @@
         }
 
         .welcome-text a:hover {
-            color: #00e5c9; /* Более яркий цвет при наведении */
+            color: #ff4d4d; 
         }
 
         .content {
             display: flex;
             flex-wrap: wrap;
-            justify-content: center;
-            gap: 30px; /* Увеличенный отступ между элементами */
+            justify-content: flex-start; /* ВАЖНО: Выравнивание по левому краю */
+            gap: 30px; 
             padding: 20px;
             max-width: 1200px;
             width: 100%;
+        }
+
+        /* * ВАЖНЫЙ ФИКС ВЫРАВНИВАНИЯ:
+         * Используем невидимый элемент-заполнитель, 
+         * чтобы последняя карточка оставалась слева, 
+         * а не центрировалась. 
+         */
+        .content::after {
+            content: "";
+            flex-grow: 1; /* Позволяет заполнителю занять оставшееся место */
+            max-width: 552px; /* Ширина одного iframe */
+            min-width: 0; 
         }
 
         .game-card {
@@ -85,27 +104,31 @@
             box-shadow: var(--card-shadow);
             transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
             overflow: hidden;
+            /* Обеспечиваем, что карточка занимает нужную ширину */
+            width: 552px; 
+            flex-shrink: 0; /* Не сжимать */
         }
 
         .game-card:hover {
-            transform: translateY(-5px); /* Небольшое поднятие при наведении */
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+            transform: translateY(-5px); 
+            box-shadow: 0 8px 25px rgba(255, 0, 0, 0.7);
         }
 
         iframe {
             width: 552px;
             height: 167px;
             border: none;
-            display: block; /* Уберет лишние пробелы под iframe */
+            display: block; 
         }
 
         footer {
-            margin-top: auto; /* Прижимает футер к низу */
+            margin-top: auto; 
             padding: 20px;
             width: 100%;
             text-align: center;
             color: #888;
             font-size: 0.9em;
+            border-top: 1px solid #333;
         }
 
         /* Адаптивность */
@@ -116,13 +139,16 @@
         }
         
         @media (max-width: 1150px) {
-            /* Переключение на две колонки поменьше, чтобы лучше вместить */
+            /* Переход на две колонки поменьше */
+            .game-card {
+                 width: calc(50% - 10px); /* Два элемента в ряд с учетом gap 20px */
+            }
+             .content::after {
+                max-width: calc(50% - 10px);
+            }
             iframe {
                 width: 100%;
-                max-width: 500px; 
-            }
-            .game-card {
-                 width: calc(50% - 30px); /* Два элемента в ряд с учетом gap 30px */
+                height: 167px; 
             }
         }
 
@@ -130,12 +156,19 @@
             /* На мобильных устройствах — одна колонка */
             .game-card {
                 width: 100%;
-                max-width: 400px; /* Ограничиваем максимальную ширину для планшетов */
+                max-width: 400px; /* Ограничиваем максимальную ширину */
             }
 
             iframe {
-                width: 100%;
-                height: 140px; /* Немного уменьшим высоту для мобильных */
+                height: 140px; 
+            }
+
+            .content {
+                justify-content: center; /* Центрируем, когда одна колонка */
+            }
+
+            .content::after {
+                display: none; /* Заполнитель не нужен, когда все по центру */
             }
 
             .welcome-text {
@@ -143,7 +176,7 @@
             }
 
             .header-image {
-                border-radius: 0; /* На мобильных можно убрать скругление */
+                border-radius: 0; 
             }
         }
     </style>
@@ -151,14 +184,14 @@
 
 <body>
     <header>
-        <img src="img/BANNER.jpg" alt="Header Image" class="header-image">
+        <img src="img/BANNER.jpg" alt="KIRILLVP GAMES Banner" class="header-image">
     </header>
 
     <main>
         <div class="welcome-text">
-            👋 **Добро пожаловать на страницу KIRILLVP GAMES!** Здесь вы найдете все наши игры и музыкальные наборы. <br>
-            Посетите нашу основную страницу на 
-            <a href="https://kirillvp-games.itch.io/" target="_blank">itch.io</a>, чтобы поддержать нас!
+            👋 **Welcome to KIRILLVP GAMES!** This is the home of all our games and music packs. <br>
+            You can also visit our main page on 
+            <a href="https://kirillvp-games.itch.io/" target="_blank">itch.io</a> to follow and support us!
         </div>
 
         <div class="content">
@@ -349,12 +382,11 @@
                     <a href="https://kirillvp-games.itch.io/cubic-adventure-platformer" target="_blank">Cubic Adventure: Platformer by KIRILLVP GAMES</a>
                 </iframe>
             </div>
-
-            </div>
+        </div>
     </main>
     
     <footer>
-        &copy; 2025 KIRILLVP GAMES. Все права защищены.
+        &copy; 2025 KIRILLVP GAMES. All rights reserved.
     </footer>
 
 </body>
